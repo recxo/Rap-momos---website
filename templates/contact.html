@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block title %}Rap momos - Contact us{% endblock title %} 
+{%block body %}
+
+
+
+<div class="container-fluid px-0 mb-3">
+  <img src="https://source.unsplash.com/1200x500/?phone,contact,telephone" class="d-block w-100 mx-0" alt="" />
+</div>
+
+<div class="container">
+  <h1 class="text-center">Contact Us</h1>
+  <form method="post" action="{% url 'savecontact'%}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="name"
+        placeholder="Enter your name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="phoneno" class="form-label" >Phone no.</label>
+      <input
+        type="phone"
+        class="form-control"
+        id="phoneno"
+        name="phoneno"
+        placeholder="Enter your Phone No."
+      />
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label"
+        >Tell about what you wanna contact me for</label
+      >
+      <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+    </div>
+    <button class="btn btn-primary btn">Submit</button>
+  </form>
+</div>
+{% endblock body %}
